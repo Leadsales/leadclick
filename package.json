@@ -16,11 +16,14 @@
   ],
   "scripts": {
     "build": "stencil build --docs",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint-staged": "lint-staged",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@stencil/core": "^2.7.0",
