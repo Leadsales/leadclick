@@ -1,6 +1,6 @@
 {
   "name": "leadclick",
-  "version": "0.0.1",
+  "version": "0.0.0-dev",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
   "module": "dist/custom-elements/index.js",
@@ -44,7 +44,8 @@
     "jest-cli": "^26.6.3",
     "lint-staged": "^12.0.2",
     "prettier": "2.4.1",
-    "puppeteer": "^10.0.0"
+    "puppeteer": "^10.0.0",
+    "semantic-release": "^18.0.0"
   },
   "license": "MIT",
   "lint-staged": {
