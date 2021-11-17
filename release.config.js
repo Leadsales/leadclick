@@ -49,17 +49,12 @@ module.exports = {
         },
       },
     ],
-    [
-      '@semantic-release/github',
-      {
-        assets: ['dist/**/**/*.{js,json}', 'dist/**/**/**/*.{js,json}'],
-      },
-    ],
     '@semantic-release/npm',
     [
       '@semantic-release/git',
       {
         assets: ['dist/**/**/*.{js,js.map}', 'package.json'],
+        /* eslint-disable no-template-curly-in-string */
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
