@@ -27,6 +27,7 @@ UserInterfaceState.xcuserstate
 # compiled output
 dist
 /node_modules
+.npmrc
 
 # Logs
 logs

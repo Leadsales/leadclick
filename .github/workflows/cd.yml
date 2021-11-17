@@ -32,8 +32,11 @@ jobs:
         run: npm install --ignore-scripts
 
       - name: Building
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           npm run build
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc && npm publish 
 
       # install dependencies and run semantic-release
       - run: npm ci
