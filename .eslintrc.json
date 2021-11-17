@@ -16,5 +16,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "max-len": "off",
+        "import/prefer-default-export": "off",
+        "import/no-unresolved": "off",
+        "import/extensions": "off",
+        "@stencil/decorators-context": "warn",
+        "no-unused-vars": "warn"
     }
 }
