@@ -7,11 +7,38 @@ import { Component, Prop, h } from '@stencil/core';
 })
 export class MyComponent {
   /**
-   * The first name
+   * The call to action message
    */
-  @Prop() first: string;
+  @Prop() cta: string;
+  /**
+   * The Whatsapp url
+   */
+  @Prop() waurl: string;
+  /**
+   * The background color
+   */
+   @Prop() bgcolor: string;
+
+  readonly openWhatsApp: () => void;
+
+  constructor () {
+    this.openWhatsApp = () : void => {
+      console.log("url", this.waurl);
+      
+      window.open(this.waurl, '_blank');
+      return
+    }
+  }
 
   render() {
-    return <div>Hello, World! I'm {this.first}</div>;
+    return (
+      <div class="wrapper">
+        <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}}onClick={this.openWhatsApp}> 
+          <p class="cta-text">{this.cta}</p> 
+        </div>
+        <p class="by">⚡️by <a class="by" href="https://leadsales.io/">leadsales.io</a></p>
+      </div>
+    );
   }
 }
+
