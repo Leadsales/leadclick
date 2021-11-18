@@ -6,7 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
+    interface LeadclickWidget {
         /**
           * The background color
          */
@@ -22,18 +22,18 @@ export namespace Components {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLLeadclickWidgetElement extends Components.LeadclickWidget, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLLeadclickWidgetElement: {
+        prototype: HTMLLeadclickWidgetElement;
+        new (): HTMLLeadclickWidgetElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "leadclick-widget": HTMLLeadclickWidgetElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
+    interface LeadclickWidget {
         /**
           * The background color
          */
@@ -48,14 +48,14 @@ declare namespace LocalJSX {
         "waurl"?: string;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "leadclick-widget": LeadclickWidget;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "leadclick-widget": LocalJSX.LeadclickWidget & JSXBase.HTMLAttributes<HTMLLeadclickWidgetElement>;
         }
     }
 }

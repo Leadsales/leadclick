@@ -1,6 +1,4 @@
-# my-component
-
-<!-- Auto Generated Below -->
+# leadclick
 
 ## Properties
 

@@ -1,11 +1,11 @@
 import { Component, Prop, h } from '@stencil/core';
 
 @Component({
-  tag: 'my-component',
-  styleUrl: 'my-component.css',
+  tag: 'leadclick-widget',
+  styleUrl: 'leadclick.css',
   shadow: true,
 })
-export class MyComponent {
+export class Leadclick {
   /**
    * The call to action message
    */
