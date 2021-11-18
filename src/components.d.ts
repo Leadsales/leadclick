@@ -15,6 +15,7 @@ export namespace Components {
           * The call to action message
          */
         "cta": string;
+        "svg": string;
         /**
           * The Whatsapp url
          */
@@ -42,6 +43,7 @@ declare namespace LocalJSX {
           * The call to action message
          */
         "cta"?: string;
+        "svg"?: string;
         /**
           * The Whatsapp url
          */

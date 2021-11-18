@@ -1,8 +1,9 @@
-import { Component, Prop, h } from '@stencil/core';
+import { Component, Prop, h, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'leadclick-widget',
   styleUrl: 'leadclick.css',
+  assetsDirs: ['assets'],
   shadow: true,
 })
 export class Leadclick {
@@ -18,6 +19,7 @@ export class Leadclick {
    * The background color
    */
    @Prop() bgcolor: string;
+   @Prop() svg = "whatsapp-icon.svg";
 
   readonly openWhatsApp: () => void;
 
@@ -34,9 +36,10 @@ export class Leadclick {
     return (
       <div class="wrapper">
         <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}}onClick={this.openWhatsApp}>
+          <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
           <p class="cta-text">{this.cta}</p>
         </div>
-        <p class="by">⚡️by <a class="by" href="https://leadsales.io/">leadsales.io</a></p>
+        <p class="by">⚡️by <a class="link" href="https://leadsales.io/">leadsales.io</a></p>
       </div>
     );
   }

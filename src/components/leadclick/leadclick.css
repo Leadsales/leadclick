@@ -20,11 +20,12 @@
   height: 3rem;
   padding: 2px 0;
   box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8);
+  overflow: auto;
 }
 
 .cta-text {
-  flex: content;
-  flex-direction: column;
+  display: inline;
+  float: left;
   color: white;
 }
 
@@ -36,7 +37,17 @@
   line-height: 1.25rem;
 }
 
-a {
+link {
   text-decoration: none;
   color: #3f40c2;
+}
+
+.image {
+  display: inline;
+  float: left;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 0.5rem;
 }
