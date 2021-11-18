@@ -24,7 +24,7 @@ export class Leadclick {
   constructor () {
     this.openWhatsApp = () : void => {
       console.log("url", this.waurl);
-      
+
       window.open(this.waurl, '_blank');
       return
     }
@@ -33,8 +33,8 @@ export class Leadclick {
   render() {
     return (
       <div class="wrapper">
-        <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}}onClick={this.openWhatsApp}> 
-          <p class="cta-text">{this.cta}</p> 
+        <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}}onClick={this.openWhatsApp}>
+          <p class="cta-text">{this.cta}</p>
         </div>
         <p class="by">⚡️by <a class="by" href="https://leadsales.io/">leadsales.io</a></p>
       </div>

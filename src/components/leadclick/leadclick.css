@@ -23,6 +23,8 @@
 }
 
 .cta-text {
+  flex: content;
+  flex-direction: column;
   color: white;
 }
 
