@@ -1,12 +1,14 @@
-# leadclick
+# leadclick-widget
+
+<!-- Auto Generated Below -->
 
 ## Properties
 
-| Property | Attribute | Description     | Type     | Default     |
-| -------- | --------- | --------------- | -------- | ----------- |
-| `first`  | `first`   | The first name  | `string` | `undefined` |
-| `last`   | `last`    | The last name   | `string` | `undefined` |
-| `middle` | `middle`  | The middle name | `string` | `undefined` |
+| Property  | Attribute | Description                | Type     | Default     |
+| --------- | --------- | -------------------------- | -------- | ----------- |
+| `bgcolor` | `bgcolor` | The background color       | `string` | `undefined` |
+| `cta`     | `cta`     | The call to action message | `string` | `undefined` |
+| `waurl`   | `waurl`   | The Whatsapp url           | `string` | `undefined` |
 
 ---
 
