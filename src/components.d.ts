@@ -8,6 +8,18 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LeadclickWidget {
         /**
+          * The Facebook url
+         */
+        "FBUrl"?: string;
+        /**
+          * The Instagram url
+         */
+        "IGUrl"?: string;
+        /**
+          * The Whatsapp url
+         */
+        "WAUrl"?: string;
+        /**
           * The background color
          */
         "bgcolor": string;
@@ -15,11 +27,10 @@ export namespace Components {
           * The call to action message
          */
         "cta": string;
-        "svg": string;
         /**
-          * The Whatsapp url
+          * The amount of connected integrations
          */
-        "waurl": string;
+        "integrations": number;
     }
 }
 declare global {
@@ -36,6 +47,18 @@ declare global {
 declare namespace LocalJSX {
     interface LeadclickWidget {
         /**
+          * The Facebook url
+         */
+        "FBUrl"?: string;
+        /**
+          * The Instagram url
+         */
+        "IGUrl"?: string;
+        /**
+          * The Whatsapp url
+         */
+        "WAUrl"?: string;
+        /**
           * The background color
          */
         "bgcolor"?: string;
@@ -43,11 +66,10 @@ declare namespace LocalJSX {
           * The call to action message
          */
         "cta"?: string;
-        "svg"?: string;
         /**
-          * The Whatsapp url
+          * The amount of connected integrations
          */
-        "waurl"?: string;
+        "integrations"?: number;
     }
     interface IntrinsicElements {
         "leadclick-widget": LeadclickWidget;

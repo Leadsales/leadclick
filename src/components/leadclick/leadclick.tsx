@@ -1,4 +1,4 @@
-import { Component, Prop, h, getAssetPath } from '@stencil/core';
+import { Component, Prop, getAssetPath, State, h } from '@stencil/core';
 
 @Component({
   tag: 'leadclick-widget',
@@ -14,28 +14,80 @@ export class Leadclick {
   /**
    * The Whatsapp url
    */
-  @Prop() waurl: string;
+  @Prop() WAUrl?: string;
+  /**
+   * The Facebook url
+   */
+  @Prop() FBUrl?: string;
+  /**
+   * The Instagram url
+   */
+  @Prop() IGUrl?: string;
   /**
    * The background color
    */
    @Prop() bgcolor: string;
-   @Prop() svg = "whatsapp-icon.svg";
+   /**
+   * The amount of connected integrations
+   */
+   @Prop() integrations: number;
+   
+   @State() showOptions = false;
+   
+   readonly svg = "whatsapp-icon.svg";
+   readonly buttons = ['instagram', 'facebook', 'whatsapp']
 
-  readonly openWhatsApp: () => void;
 
-  constructor () {
-    this.openWhatsApp = () : void => {
-      console.log("url", this.waurl);
-
-      window.open(this.waurl, '_blank');
-      return
-    }
+  // Helper functions
+  openWhatsApp() {
+    window.open(this.WAUrl, '_blank');
+    return
   }
 
+  openFacebook() {
+    window.open(this.FBUrl, '_blank');
+    return
+  }
+
+  openInstragram() {
+    window.open(this.IGUrl, '_blank');
+    return
+  }
+  
+
+  clickHandler() {
+     if(this.integrations === 1){
+       if(this.WAUrl) this.openWhatsApp();
+       if(this.FBUrl) this.openFacebook();
+       if(this.IGUrl) this.openInstragram();
+     }else{
+       this.showOptions = !this.showOptions;
+     }
+  }
+
+  
+
   render() {
+    let options = null;
+    if (this.showOptions) {
+        options = (
+          <div class="card" >
+            <p>👋 ¿Por qué canal te gustaría comunicarte con nosotros?</p>
+            {this.buttons.map((btn, index, arr) => (
+                <div class="row_item">  
+                    <img class="image" src={btn == 'instagram' ? getAssetPath(`./assets/instagram-icon.svg`) : btn == 'facebook' ? getAssetPath(`./assets/messenger-icon.svg`) : getAssetPath(`./assets/whatsapp-icon.svg`)} />
+                    <p class="integration">{btn}</p>
+                    {index !== arr.length-1 && <hr/>}
+                </div>
+            ))}
+                </div>
+            );
+    }
+
     return (
       <div class="wrapper">
-        <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}}onClick={this.openWhatsApp}>
+        {options}
+        <div class="button" style={{backgroundColor: this.bgcolor ? this.bgcolor: "#3F40C2"}} onClick={this.clickHandler.bind(this)}>
           <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
           <p class="cta-text">{this.cta}</p>
         </div>
