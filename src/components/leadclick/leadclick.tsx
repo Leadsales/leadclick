@@ -31,9 +31,9 @@ export class Leadclick {
    * The amount of connected integrations
    */
    @Prop() integrations: number;
-   
+
    @State() showOptions = false;
-   
+
    readonly svg = "whatsapp-icon.svg";
    readonly buttons = ['instagram', 'facebook', 'whatsapp']
 
@@ -53,7 +53,7 @@ export class Leadclick {
     window.open(this.IGUrl, '_blank');
     return
   }
-  
+
 
   clickHandler() {
      if(this.integrations === 1){
@@ -65,7 +65,7 @@ export class Leadclick {
      }
   }
 
-  
+
 
   render() {
     let options = null;
@@ -74,7 +74,7 @@ export class Leadclick {
           <div class="card" >
             <p>👋 ¿Por qué canal te gustaría comunicarte con nosotros?</p>
             {this.buttons.map((btn, index, arr) => (
-                <div class="row_item">  
+                <div class="row_item">
                     <img class="image" src={btn == 'instagram' ? getAssetPath(`./assets/instagram-icon.svg`) : btn == 'facebook' ? getAssetPath(`./assets/messenger-icon.svg`) : getAssetPath(`./assets/whatsapp-icon.svg`)} />
                     <p class="integration">{btn}</p>
                     {index !== arr.length-1 && <hr/>}
