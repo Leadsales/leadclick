@@ -3,12 +3,10 @@
 }
 
 .wrapper {
-  width: 15%;
-  height: auto;
+  width: 220px;
   position: fixed;
   bottom: 0.2rem;
   right: 1rem;
-  float: right;
   text-align: center;
   font-family: 'Open Sans', 'Helvetica Neue';
 }
@@ -18,15 +16,16 @@
   height: 2rem;
   cursor: pointer;
   height: 3rem;
-  padding: 2px 0;
+  padding: 2px;
   box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8);
   overflow: auto;
+  align-items: center;
 }
 
 .cta-text {
-  display: inline;
-  float: left;
+  display: inline-block;
   color: white;
+  margin-left: 0.5rem;
 }
 
 .by {
@@ -37,42 +36,69 @@
   line-height: 1.25rem;
 }
 
-link {
+.leadsales_link {
   text-decoration: none;
   color: #3f40c2;
+  font-weight: 500;
 }
 
 .image {
-  display: inline;
-  float: left;
-  width: 2rem;
-  height: 2rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 0.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: -0.3rem;
 }
 
 .card {
   background-color: #f6f6fa;
-  height: auto;
   width: full;
   margin-bottom: 1rem;
-  padding: 0.2rem 1rem;
-  border-radius: 0.375rem;
+  border-bottom-left-radius: 0.375rem;
+  border-bottom-right-radius: 0.375rem;
   box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8);
 }
 
 .row_item {
-  padding: 2px 0;
   cursor: pointer;
+  height: auto;
+}
+
+.row_item:hover {
+  background-color: rgba(121, 121, 197, 0.3);
 }
 
 .integration {
   display: inline-block;
-  margin-left: -2rem;
+  height: auto;
+  margin-left: 0.5rem;
 }
 
 hr {
-  color: #888888;
-  border-top: 1px solid;
+  border: 0;
+  height: 1px;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(192, 192, 192, 0.75), rgba(0, 0, 0, 0));
+}
+
+.list_image {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-bottom: -0.5rem;
+}
+
+.title {
+  background-color: #3f40c2;
+  color: #fff;
+  height: auto;
+  width: full;
+  padding: 1rem;
+  border-top-left-radius: 0.375rem;
+  border-top-right-radius: 0.375rem;
+  box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8);
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.space {
+  height: 9px;
 }

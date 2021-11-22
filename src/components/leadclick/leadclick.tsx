@@ -37,25 +37,25 @@ export class Leadclick {
   readonly whatsappSVG = getAssetPath(`./assets/whatsapp-icon.svg`);
   readonly facebookSVG = getAssetPath(`./assets/messenger-icon.svg`);
   readonly instagramSVG = getAssetPath(`./assets/instagram-icon.svg`);
-  readonly buttons = ['instagram', 'facebook', 'whatsapp'];
+  readonly buttons = ['Instagram', 'Facebook', 'Whatsapp'];
 
   // Helper functions
-  openWhatsApp() {
+  private openWhatsApp() {
     window.open(this.WAUrl, '_blank');
     return;
   }
 
-  openFacebook() {
+  private openFacebook() {
     window.open(this.FBUrl, '_blank');
     return;
   }
 
-  openInstragram() {
+  private openInstragram() {
     window.open(this.IGUrl, '_blank');
     return;
   }
 
-  clickHandler() {
+  private clickHandler() {
     if (this.integrations === 1) {
       if (this.WAUrl) this.openWhatsApp();
       if (this.FBUrl) this.openFacebook();
@@ -69,27 +69,34 @@ export class Leadclick {
     let options = null;
     if (this.showOptions) {
       options = (
-        <div class="card">
-          <p>👋 ¿Por qué canal te gustaría comunicarte con nosotros?</p>
-          {this.buttons.map((btn, index, arr) => {
-            let icon;
-            if (btn === 'instagram') {
-              icon = this.instagramSVG;
-            }
-            if (btn === 'whatsapp') {
-              icon = this.whatsappSVG;
-            }
-            if (btn === 'facebook') {
-              icon = this.facebookSVG;
-            }
-            return (
-              <div class="row_item">
-                <img class="image" src={icon} />
-                <p class="integration">{btn}</p>
-                {index !== arr.length - 1 && <hr />}
-              </div>
-            );
-          })}
+        <div>
+          <div class="title">👋 ¿Por qué canal te gustaría comunicarte con nosotros?</div>
+          <div class="card">
+            {this.buttons.map((btn, index, arr) => {
+              let icon;
+              if (btn === 'Instagram') {
+                icon = this.instagramSVG;
+              }
+              if (btn === 'Whatsapp') {
+                icon = this.whatsappSVG;
+              }
+              if (btn === 'Facebook') {
+                icon = this.facebookSVG;
+              }
+              return (
+                <div class="complete_row">
+                  {index === 0 && <div class="space"/>}
+                  <div class="row_item" onClick={btn === 'Whatsapp' ? this.openWhatsApp.bind(this): this.openInstragram.bind(this)}>
+                    <img class="list_image" src={icon} />
+                    <p class="integration">{btn}</p>
+                  </div>
+                  {index !== arr.length - 1 && <hr />}
+                  {index === arr.length - 1 && <hr class="hidden"/>}
+                </div>
+              );
+            })}
+          </div>
+
         </div>
       );
     }
@@ -97,13 +104,13 @@ export class Leadclick {
     return (
       <div class="wrapper">
         {options}
-        <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2' }} onClick={this.clickHandler.bind(this)}>
+        <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2' }} onClick={this.openWhatsApp.bind(this)}>
           <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
           <p class="cta-text">{this.cta}</p>
         </div>
         <p class="by">
           ⚡️by{' '}
-          <a class="link" href="https://leadsales.io/">
+          <a rel="follow" target="blank" class="leadsales_link" href="https://leadsales.io/">
             leadsales.io
           </a>
         </p>
