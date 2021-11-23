@@ -4,6 +4,7 @@ import { Component, Prop, h, State, getAssetPath } from '@stencil/core';
   tag: 'leadclick-widget',
   styleUrl: 'leadclick.css',
   shadow: true,
+  assetsDirs: ['assets'],
 })
 export class Leadclick {
   /**
@@ -78,8 +79,8 @@ export class Leadclick {
     let options = null;
     if (this.showOptions) {
       options = (
-        <div>
-          <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>
+        [
+          <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
           <div class="card">
             {this.buttons.map((btn, index, arr) => {
               let icon;
@@ -96,7 +97,7 @@ export class Leadclick {
                 <div class="complete_row">
                   {index === 0 && <div class="space"/>}
                   <div class="row_item" onClick={btn === 'Whatsapp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
-                    <img class="list_image" src={icon} />
+                    <img class="image" src={icon} />
                     <p class="integration">{btn}</p>
                   </div>
                   {index !== arr.length - 1 && <hr />}
@@ -106,7 +107,7 @@ export class Leadclick {
             })}
           </div>
 
-        </div>
+        ]
       );
     }
     return (
@@ -118,7 +119,7 @@ export class Leadclick {
         </div>
         <p class="by">
           ⚡️by{' '}
-          <a rel="follow" target="blank" class="leadsales_link" href="https://leadsales.io/">
+          <a rel="dofollow" target="blank" class="leadsales_link" href="https://leadsales.io/">
             leadsales.io
           </a>
         </p>
