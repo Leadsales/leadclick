@@ -10,7 +10,7 @@ export namespace Components {
         /**
           * The background color
          */
-        "bgcolor": string;
+        "bgcolor"?: string;
         /**
           * The call to action message
          */
@@ -18,7 +18,27 @@ export namespace Components {
         /**
           * The Whatsapp url
          */
-        "waurl": string;
+        "fburl"?: string;
+        /**
+          * The font color
+         */
+        "fontcolor"?: string;
+        /**
+          * The Instagram url
+         */
+        "igurl"?: string;
+        /**
+          * The title to message for the integrations
+         */
+        "instructions": string;
+        /**
+          * The amount of connected integrations
+         */
+        "integrations": number;
+        /**
+          * The Whatsapp url
+         */
+        "waurl"?: string;
     }
 }
 declare global {
@@ -42,6 +62,26 @@ declare namespace LocalJSX {
           * The call to action message
          */
         "cta"?: string;
+        /**
+          * The Whatsapp url
+         */
+        "fburl"?: string;
+        /**
+          * The font color
+         */
+        "fontcolor"?: string;
+        /**
+          * The Instagram url
+         */
+        "igurl"?: string;
+        /**
+          * The title to message for the integrations
+         */
+        "instructions"?: string;
+        /**
+          * The amount of connected integrations
+         */
+        "integrations"?: number;
         /**
           * The Whatsapp url
          */
