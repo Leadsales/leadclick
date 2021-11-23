@@ -21,6 +21,7 @@
         "import/no-unresolved": "off",
         "import/extensions": "off",
         "@stencil/decorators-context": "warn",
-        "no-unused-vars": "warn"
+        "no-unused-vars": "warn",
+        "no-nested-ternary": "warn"
     }
 }
