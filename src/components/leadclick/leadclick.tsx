@@ -1,9 +1,8 @@
-import { Component, Prop, getAssetPath, State, h } from '@stencil/core';
+import { Component, Prop, h, State, getAssetPath } from '@stencil/core';
 
 @Component({
   tag: 'leadclick-widget',
   styleUrl: 'leadclick.css',
-  assetsDirs: ['assets'],
   shadow: true,
 })
 export class Leadclick {
@@ -12,65 +11,75 @@ export class Leadclick {
    */
   @Prop() cta: string;
   /**
+   * The title to message for the integrations
+   */
+  @Prop() instructions: string;
+  /**
    * The Whatsapp url
    */
-  @Prop() WAUrl?: string;
-  /**
-   * The Facebook url
-   */
-  @Prop() FBUrl?: string;
+  @Prop() waurl?: string;
   /**
    * The Instagram url
    */
-  @Prop() IGUrl?: string;
+  @Prop() igurl?: string;
+  /**
+   * The Whatsapp url
+   */
+  @Prop() fburl?: string;
   /**
    * The background color
    */
-  @Prop() bgcolor: string;
+   @Prop() bgcolor?: string;
+  /**
+   * The font color
+   */
+   @Prop() fontcolor?: string;
   /**
    * The amount of connected integrations
    */
   @Prop() integrations: number;
 
+  
   @State() showOptions = false;
+
+  private openWhatsApp () {
+    window.open(this.waurl, '_blank');
+    return
+  }
+
+  private openFacebook() {
+    window.open(this.fburl, '_blank');
+    return;
+  }
+
+  private openInstragram() {
+    window.open(this.igurl, '_blank');
+    return;
+  }
+
+  private clickHandler() {
+    if (this.integrations === 1) {
+      if (this.waurl) this.openWhatsApp();
+      if (this.fburl) this.openFacebook();
+      if (this.igurl) this.openInstragram();
+    } else {
+      this.showOptions = !this.showOptions;
+    }
+  }
+    
 
   readonly whatsappSVG = getAssetPath(`./assets/whatsapp-icon.svg`);
   readonly facebookSVG = getAssetPath(`./assets/messenger-icon.svg`);
   readonly instagramSVG = getAssetPath(`./assets/instagram-icon.svg`);
   readonly buttons = ['Instagram', 'Facebook', 'Whatsapp'];
 
-  // Helper functions
-  private openWhatsApp() {
-    window.open(this.WAUrl, '_blank');
-    return;
-  }
-
-  private openFacebook() {
-    window.open(this.FBUrl, '_blank');
-    return;
-  }
-
-  private openInstragram() {
-    window.open(this.IGUrl, '_blank');
-    return;
-  }
-
-  private clickHandler() {
-    if (this.integrations === 1) {
-      if (this.WAUrl) this.openWhatsApp();
-      if (this.FBUrl) this.openFacebook();
-      if (this.IGUrl) this.openInstragram();
-    } else {
-      this.showOptions = !this.showOptions;
-    }
-  }
 
   render() {
     let options = null;
     if (this.showOptions) {
       options = (
         <div>
-          <div class="title">👋 ¿Por qué canal te gustaría comunicarte con nosotros?</div>
+          <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>
           <div class="card">
             {this.buttons.map((btn, index, arr) => {
               let icon;
@@ -86,7 +95,7 @@ export class Leadclick {
               return (
                 <div class="complete_row">
                   {index === 0 && <div class="space"/>}
-                  <div class="row_item" onClick={btn === 'Whatsapp' ? this.openWhatsApp.bind(this): this.openInstragram.bind(this)}>
+                  <div class="row_item" onClick={btn === 'Whatsapp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
                     <img class="list_image" src={icon} />
                     <p class="integration">{btn}</p>
                   </div>
@@ -100,11 +109,10 @@ export class Leadclick {
         </div>
       );
     }
-
     return (
       <div class="wrapper">
         {options}
-        <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2' }} onClick={this.openWhatsApp.bind(this)}>
+        <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
           <p class="cta-text">{this.cta}</p>
         </div>
@@ -118,3 +126,4 @@ export class Leadclick {
     );
   }
 }
+

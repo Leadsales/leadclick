@@ -8,29 +8,37 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface LeadclickWidget {
         /**
-          * The Facebook url
-         */
-        "FBUrl"?: string;
-        /**
-          * The Instagram url
-         */
-        "IGUrl"?: string;
-        /**
-          * The Whatsapp url
-         */
-        "WAUrl"?: string;
-        /**
           * The background color
          */
-        "bgcolor": string;
+        "bgcolor"?: string;
         /**
           * The call to action message
          */
         "cta": string;
         /**
+          * The Whatsapp url
+         */
+        "fburl"?: string;
+        /**
+          * The font color
+         */
+        "fontcolor"?: string;
+        /**
+          * The Instagram url
+         */
+        "igurl"?: string;
+        /**
+          * The title to message for the integrations
+         */
+        "instructions": string;
+        /**
           * The amount of connected integrations
          */
         "integrations": number;
+        /**
+          * The Whatsapp url
+         */
+        "waurl"?: string;
     }
 }
 declare global {
@@ -47,18 +55,6 @@ declare global {
 declare namespace LocalJSX {
     interface LeadclickWidget {
         /**
-          * The Facebook url
-         */
-        "FBUrl"?: string;
-        /**
-          * The Instagram url
-         */
-        "IGUrl"?: string;
-        /**
-          * The Whatsapp url
-         */
-        "WAUrl"?: string;
-        /**
           * The background color
          */
         "bgcolor"?: string;
@@ -67,9 +63,29 @@ declare namespace LocalJSX {
          */
         "cta"?: string;
         /**
+          * The Whatsapp url
+         */
+        "fburl"?: string;
+        /**
+          * The font color
+         */
+        "fontcolor"?: string;
+        /**
+          * The Instagram url
+         */
+        "igurl"?: string;
+        /**
+          * The title to message for the integrations
+         */
+        "instructions"?: string;
+        /**
           * The amount of connected integrations
          */
         "integrations"?: number;
+        /**
+          * The Whatsapp url
+         */
+        "waurl"?: string;
     }
     interface IntrinsicElements {
         "leadclick-widget": LeadclickWidget;

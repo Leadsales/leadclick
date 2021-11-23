@@ -24,7 +24,6 @@
 
 .cta-text {
   display: inline-block;
-  color: white;
   margin-left: 0.5rem;
 }
 
@@ -85,7 +84,6 @@ hr {
 }
 
 .title {
-  background-color: #3f40c2;
   color: #fff;
   height: auto;
   width: full;
