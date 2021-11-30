@@ -25,6 +25,7 @@ UserInterfaceState.xcuserstate
 .env
 
 # compiled output
+/dist
 /node_modules
 .npmrc
 
