@@ -1,5 +1,6 @@
 {
   "name": "@leadsales/leadclick",
+  "private": false,
   "version": "1.3.2",
   "description": "Stencil Component Starter",
   "main": "dist/index.cjs.js",
@@ -12,7 +13,9 @@
   "unpkg": "dist/leadclick/leadclick.esm.js",
   "files": [
     "dist/",
-    "dist/*"
+    "dist/*",
+    "loader/",
+    "loader/*"
   ],
   "scripts": {
     "build": "stencil build --docs",
