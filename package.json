@@ -15,7 +15,7 @@
     "dist/*"
   ],
   "scripts": {
-    "build": "stencil build --ci --docs",
+    "build": "stencil build --docs",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",

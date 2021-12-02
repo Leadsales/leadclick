@@ -49,12 +49,7 @@ module.exports = {
         },
       },
     ],
-    [
-      '@semantic-release/npm',
-      {
-        pkgRoot: 'dist',
-      },
-    ],
+    ['@semantic-release/npm', {}],
     [
       '@semantic-release/git',
       {
