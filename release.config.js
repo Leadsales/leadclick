@@ -1,8 +1,4 @@
 module.exports = {
-  branches: [
-    { name: 'main', prerelease: false },
-    { name: 'dev', prerelease: true },
-  ],
   plugins: [
     [
       '@semantic-release/commit-analyzer',
@@ -49,14 +45,22 @@ module.exports = {
         },
       },
     ],
+    '@semantic-release/github',
     ['@semantic-release/npm', {}],
     [
       '@semantic-release/git',
       {
-        assets: ['dist/**/**/*.{js,js.map}', 'package.json'],
+        assets: ['package.json'],
+        repositoryUrl: 'https://github.com/Leadsales/leadclick',
+        githubUrl: 'https://github.com',
+        githubApiPathPrefix: '/api/v3/',
         /* eslint-disable no-template-curly-in-string */
         message: 'chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}',
       },
     ],
+  ],
+  branches: [
+    { name: 'main', prerelease: false },
+    { name: 'dev', prerelease: true },
   ],
 };
