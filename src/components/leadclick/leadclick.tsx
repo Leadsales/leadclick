@@ -1,4 +1,4 @@
-import { Component, Prop, h, State, getAssetPath } from '@stencil/core';
+import { Component, Prop, h, State } from '@stencil/core';
 
 @Component({
   tag: 'leadclick-widget',
