@@ -80,9 +80,9 @@ export class Leadclick {
     }
   }
 
-  readonly whatsappSVG = getAssetPath(`./assets/whatsapp-icon.svg`);
-  readonly facebookSVG = getAssetPath(`./assets/messenger-icon.svg`);
-  readonly instagramSVG = getAssetPath(`./assets/instagram-icon.svg`);
+  readonly whatsappSVG = "https://d3sfoqdi5f3194.cloudfront.net/whatsapp-icon.svg"
+  readonly facebookSVG = "https://d3sfoqdi5f3194.cloudfront.net/messenger-icon.svg"
+  readonly instagramSVG = "https://d3sfoqdi5f3194.cloudfront.net/instagram-icon.svg"
 
 
   render() {
@@ -124,12 +124,12 @@ export class Leadclick {
         {options}
         <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <div class="row_item">
-            <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
+            <img class="image" src={this.whatsappSVG} />
             <p class="cta-text">{this.cta}</p>
           </div>
         </div>
         <p class="by">
-          ⚡️by{' '}
+          ⚡️ by{' '}
           <a rel="dofollow" target="blank" class="leadsales_link" href="https://leadsales.io/">
             leadsales.io
           </a>
