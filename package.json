@@ -13,7 +13,7 @@
   "unpkg": "dist/leadclick/leadclick.esm.js",
   "files": [
     "dist/",
-    "loader/"
+    "dist/*"
   ],
   "scripts": {
     "build": "stencil build --docs",

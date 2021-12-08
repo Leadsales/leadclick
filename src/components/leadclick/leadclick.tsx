@@ -4,7 +4,6 @@ import { Component, Prop, h, State, getAssetPath } from '@stencil/core';
   tag: 'leadclick-widget',
   styleUrl: 'leadclick.css',
   shadow: true,
-  assetsDirs: ['assets'],
 })
 export class Leadclick {
   /**
