@@ -36,6 +36,10 @@ export namespace Components {
          */
         "integrations": number;
         /**
+          * The name of the visible integrations
+         */
+        "visible_integrations": string;
+        /**
           * The Whatsapp url
          */
         "waurl"?: string;
@@ -82,6 +86,10 @@ declare namespace LocalJSX {
           * The amount of connected integrations
          */
         "integrations"?: number;
+        /**
+          * The name of the visible integrations
+         */
+        "visible_integrations"?: string;
         /**
           * The Whatsapp url
          */
