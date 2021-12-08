@@ -67,19 +67,18 @@ export class Leadclick {
       this.showOptions = !this.showOptions;
     }
   }
-    
 
   readonly whatsappSVG = getAssetPath(`./assets/whatsapp-icon.svg`);
   readonly facebookSVG = getAssetPath(`./assets/messenger-icon.svg`);
   readonly instagramSVG = getAssetPath(`./assets/instagram-icon.svg`);
-  readonly buttons = ['Instagram', 'Facebook', 'Whatsapp'];
+  readonly buttons = ['Instagram', 'Facebook', 'WhatsApp'];
 
 
   render() {
     let options = null;
     if (this.showOptions) {
       options = (
-        [
+          <div>
           <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
           <div class="card">
             {this.buttons.map((btn, index, arr) => {
@@ -87,7 +86,7 @@ export class Leadclick {
               if (btn === 'Instagram') {
                 icon = this.instagramSVG;
               }
-              if (btn === 'Whatsapp') {
+              if (btn === 'WhatsApp') {
                 icon = this.whatsappSVG;
               }
               if (btn === 'Facebook') {
@@ -107,15 +106,17 @@ export class Leadclick {
             })}
           </div>
 
-        ]
+        </div>
       );
     }
     return (
       <div class="wrapper">
         {options}
         <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
-          <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
-          <p class="cta-text">{this.cta}</p>
+          <div class="row_item">
+            <img class="image" src={getAssetPath(`./assets/whatsapp-icon.svg`)} />
+            <p class="cta-text">{this.cta}</p>
+          </div>
         </div>
         <p class="by">
           ⚡️by{' '}
