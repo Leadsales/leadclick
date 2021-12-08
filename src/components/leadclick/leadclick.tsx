@@ -39,8 +39,11 @@ export class Leadclick {
    * The amount of connected integrations
    */
   @Prop() integrations: number;
+  /**
+   * The name of the visible integrations
+   */
+  @Prop() visible_integrations: string;
 
-  
   @State() showOptions = false;
 
   private openWhatsApp () {
@@ -59,10 +62,20 @@ export class Leadclick {
   }
 
   private clickHandler() {
+    let buttons = this.visible_integrations.split(',');
     if (this.integrations === 1) {
-      if (this.waurl) this.openWhatsApp();
-      if (this.fburl) this.openFacebook();
-      if (this.igurl) this.openInstragram();
+      if (this.waurl && buttons[0] === "WhatsApp") {
+        this.openWhatsApp()
+        return
+      }
+      if (this.fburl && buttons[0] === "Facebook") {
+        this.openFacebook()
+        return
+      };
+      if (this.igurl && buttons[0] === "Instagram") {
+        this.openInstragram()
+        return
+      };
     } else {
       this.showOptions = !this.showOptions;
     }
@@ -71,17 +84,17 @@ export class Leadclick {
   readonly whatsappSVG = getAssetPath(`./assets/whatsapp-icon.svg`);
   readonly facebookSVG = getAssetPath(`./assets/messenger-icon.svg`);
   readonly instagramSVG = getAssetPath(`./assets/instagram-icon.svg`);
-  readonly buttons = ['Instagram', 'Facebook', 'WhatsApp'];
 
 
   render() {
     let options = null;
+    let buttons = this.visible_integrations.split(',');
     if (this.showOptions) {
       options = (
-          <div>
+          [
           <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
           <div class="card">
-            {this.buttons.map((btn, index, arr) => {
+            {buttons.map((btn, index, arr) => {
               let icon;
               if (btn === 'Instagram') {
                 icon = this.instagramSVG;
@@ -95,7 +108,7 @@ export class Leadclick {
               return (
                 <div class="complete_row">
                   {index === 0 && <div class="space"/>}
-                  <div class="row_item" onClick={btn === 'Whatsapp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
+                  <div class="row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
                     <img class="image" src={icon} />
                     <p class="integration">{btn}</p>
                   </div>
@@ -104,9 +117,7 @@ export class Leadclick {
                 </div>
               );
             })}
-          </div>
-
-        </div>
+          </div>]
       );
     }
     return (
