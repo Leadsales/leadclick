@@ -1,8 +1,8 @@
 :host {
-  display: block !important;
+  display: block;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap') !important;
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
 .wrapper {
   width: 220px !important;
