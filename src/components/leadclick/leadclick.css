@@ -6,9 +6,6 @@
 
 .wrapper {
   width: 220px !important;
-  position: fixed !important;
-  bottom: 0.2rem !important;
-  right: 1rem !important;
   text-align: center !important;
   font-family: 'Rubik', sans-serif !important;
 }

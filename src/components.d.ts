@@ -36,6 +36,10 @@ export namespace Components {
          */
         "integrations": number;
         /**
+          * The position where the widget will be placed
+         */
+        "orientation": string;
+        /**
           * The name of the visible integrations
          */
         "visible_integrations": string;
@@ -86,6 +90,10 @@ declare namespace LocalJSX {
           * The amount of connected integrations
          */
         "integrations"?: number;
+        /**
+          * The position where the widget will be placed
+         */
+        "orientation"?: string;
         /**
           * The name of the visible integrations
          */

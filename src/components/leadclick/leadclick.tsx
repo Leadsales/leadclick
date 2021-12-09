@@ -42,6 +42,10 @@ export class Leadclick {
    * The name of the visible integrations
    */
   @Prop() visible_integrations: string;
+  /**
+   * The position where the widget will be placed
+   */
+   @Prop() orientation: string;
 
   @State() showOptions = false;
 
@@ -84,7 +88,6 @@ export class Leadclick {
   readonly facebookSVG = "https://d3sfoqdi5f3194.cloudfront.net/messenger-icon.svg"
   readonly instagramSVG = "https://d3sfoqdi5f3194.cloudfront.net/instagram-icon.svg"
 
-
   render() {
     let options = null;
     let buttons = this.visible_integrations.split(',');
@@ -120,7 +123,7 @@ export class Leadclick {
       );
     }
     return (
-      <div class="wrapper">
+      <div class="wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : {}}>
         {options}
         <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <div class="row_item">
