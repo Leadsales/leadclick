@@ -110,7 +110,7 @@ export class Leadclick {
               return (
                 <div class="complete_row">
                   {index === 0 && <div class="space"/>}
-                  <div class="row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
+                  <div onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
                     <img class="image" src={icon} />
                     <p class="integration">{btn}</p>
                   </div>
@@ -126,7 +126,7 @@ export class Leadclick {
       <div class="wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : {}}>
         {options}
         <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
-          <div class="row_item">
+          <div>
             <img class="image" src={this.whatsappSVG} />
             <p class="cta-text">{this.cta}</p>
           </div>
