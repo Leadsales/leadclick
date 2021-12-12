@@ -8,7 +8,7 @@ A widget built for fast communication in your landing page, allow your customers
 
 ---
 
-## Wordpress - Installation
+## Wordpress - Usage
 
 Lorem Ipsum is simply dummy text of the printing and
 typesetting industry. Lorem Ipsum has been the industry's
@@ -22,7 +22,7 @@ containing Lorem Ipsum passages, and more recently with
 desktop publishing software like Aldus PageMaker including
 versions of Lorem Ipsum.
 
-## React - Installation
+## React - Usage
 
 Install the project with npm
 
@@ -52,7 +52,7 @@ function App() {
 }
 ```
 
-## Angular - Installation
+## Angular - Usage
 
 Paste the script tag inside your `index.html`
 
@@ -63,7 +63,25 @@ Paste the script tag inside your `index.html`
 
 Use the **leadsales generated snippet** in your app.component.html file.
 
----
+## Vue - Usage
+
+Install the project with npm
+
+```bash
+  npm install @leadsales/leadclick --save
+```
+
+Hydrate de component in your `main.js` file
+
+```js
+import { defineCustomElements as defineLeadclick } from '@leadsales/leadclick/dist/loader';
+
+defineLeadclick(window);
+
+Vue.config.ignoredElements = ['leadclick-widget'];
+```
+
+## And that's it, you can use the leadsales generated snippet in any template you want
 
 ## Component documentation
 
