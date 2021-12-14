@@ -97,6 +97,12 @@ Check our demo at [leadsales.io](https://leadsales.io/)
 
 ---
 
+## Contributors
+
+- [@karlaromerox3](https://github.com/karlaromerox3)
+
+---
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)

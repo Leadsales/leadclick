@@ -133,7 +133,7 @@ export class Leadclick {
         </div>
         <p class="by">
           ⚡️ by{' '}
-          <a rel="dofollow" target="blank" class="leadsales_link" href="https://leadsales.io/">
+          <a rel="dofollow" target="blank" class="leadsales_link" href="https://leadsales.io/?utm_source=leadclick">
             leadsales.io
           </a>
         </p>
