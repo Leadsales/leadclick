@@ -10,17 +10,22 @@ A widget built for fast communication in your landing page, allow your customers
 
 ## Wordpress - Usage
 
-Lorem Ipsum is simply dummy text of the printing and
-typesetting industry. Lorem Ipsum has been the industry's
-standard dummy text ever since the 1500s,
-when an unknown printer took a galley of type and
-scrambled it to make a type specimen book. It has survived
-not only five centuries, but also the leap into electronic
-typesetting, remaining essentially unchanged. It was
-popularised in the 1960s with the release of Letraset sheets
-containing Lorem Ipsum passages, and more recently with
-desktop publishing software like Aldus PageMaker including
-versions of Lorem Ipsum.
+From your admin dashboard go to Pages and search the page you want the widget to appear. Once you've found it, click on it.
+
+![step1](./src/assets/step1.png)
+
+Scroll down and click on "Edit with elementor".
+
+![Step2](./src/assets/step2.png)
+
+From that new page, search for HTML on the left sidebar. Drag the icon that says HTML and has a </> icon. Drop it into the center of the page.
+![Step3](./src/assets/step3.png)
+
+The sidebar will change and display a textbox. Paste the code generated in leadsales here and click on update.
+
+![Step4](./src/assets/step4.png)
+
+And done, you have your widget up and running.
 
 ## React - Usage
 
