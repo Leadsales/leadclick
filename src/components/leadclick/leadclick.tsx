@@ -94,8 +94,8 @@ export class Leadclick {
     if (this.showOptions) {
       options = (
           [
-          <div class="title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
-          <div class="card">
+          <div class="leadsales__title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
+          <div class="leadsales__card">
             {buttons.map((btn, index, arr) => {
               let icon;
               if (btn === 'Instagram') {
@@ -108,14 +108,14 @@ export class Leadclick {
                 icon = this.facebookSVG;
               }
               return (
-                <div class="complete_row">
-                  {index === 0 && <div class="space"/>}
-                  <div class="row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
-                    <img class="list_image" src={icon} />
-                    <p class="integration">{btn}</p>
+                <div class="leadsales__complete_row">
+                  {index === 0 && <div class="leadsales__space"/>}
+                  <div class="leadsales__row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
+                    <img class="leadsales__list_image" src={icon} />
+                    <p class="leadsales__integration">{btn}</p>
                   </div>
                   {index !== arr.length - 1 && <hr />}
-                  {index === arr.length - 1 && <hr class="hidden"/>}
+                  {index === arr.length - 1 && <hr class="leadsales__hidden"/>}
                 </div>
               );
             })}
@@ -123,17 +123,17 @@ export class Leadclick {
       );
     }
     return (
-      <div class="wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : {}}>
+      <div class="leadsales__wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : {}}>
         {options}
-        <div class="button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
-          <div class="btn_row">
-            <img class="image" src={this.whatsappSVG} />
-            <p class="cta-text">{this.cta}</p>
+        <div class="leadsales__button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
+          <div class="leadsales__btn_row">
+            <img class="leadsales__image" src={this.whatsappSVG} />
+            <p class="leadsales__cta-text">{this.cta}</p>
           </div>
         </div>
-        <p class="by">
+        <p class="leadsales__by">
           ⚡️ by{' '}
-          <a rel="dofollow" target="blank" class="leadsales_link" href="https://leadsales.io/?utm_source=leadclick">
+          <a rel="dofollow" target="blank" class="leadsales__leadsales_link" href="https://leadsales.io/?utm_source=leadclick">
             leadsales.io
           </a>
         </p>
