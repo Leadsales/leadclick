@@ -87,7 +87,7 @@ hr {
 .list_image {
   width: 1.5rem !important;
   height: 1.5rem !important;
-  margin-bottom: -0.5rem !important;
+  margin-bottom: -0.3rem !important;
 }
 
 .title {
@@ -111,17 +111,26 @@ hr {
 @media (max-width: 600px) {
   .wrapper {
     width: 100px !important;
-    position: fixed !important;
-    bottom: 0.2rem !important;
-    right: 1rem !important;
     text-align: center !important;
+    font-family: 'Rubik', sans-serif !important;
+  }
+
+  p {
+    font-family: 'Rubik', sans-serif !important;
+  }
+
+  div {
+    font-family: 'Rubik', sans-serif !important;
   }
 
   .button {
     width: 50px !important;
+    height: 3rem !important;
     padding: 0.5rem !important;
     border-radius: 9999px !important;
     margin-left: 1rem !important;
+    overflow: hidden !important;
+    align-items: center !important;
   }
 
   .cta-text {
@@ -131,7 +140,13 @@ hr {
   .image {
     width: 2rem !important;
     height: 2rem !important;
-    margin-bottom: -1.4rem !important;
+    margin-bottom: -0.3rem !important;
+  }
+
+  .list_image {
+    width: 2rem !important;
+    height: 2rem !important;
+    margin-bottom: -1.5rem !important;
   }
 
   .by {
@@ -146,7 +161,8 @@ hr {
   .leadsales_link {
     text-decoration: none !important;
     color: #3f40c2 !important;
-    font-weight: 500 !important;
+    font-weight: 400 !important;
+    font-family: 'Rubik', sans-serif !important;
   }
 
   .title {
@@ -167,6 +183,15 @@ hr {
     box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8) !important;
     margin-bottom: 0.5rem !important;
     margin-left: 1rem !important;
+  }
+
+  .btn_row {
+    border-radius: 9999px !important;
+    width: 50px !important;
+    height: 48px !important;
+    cursor: pointer !important;
+    padding-top: 0.45rem !important;
+    padding-left: 0.15rem !important;
   }
 
   .integration {
