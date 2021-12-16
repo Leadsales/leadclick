@@ -94,7 +94,7 @@ export class Leadclick {
     if (this.showOptions) {
       options = (
           [
-          <div class="leadsales__title" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
+          <div class="leadsales__title leadsales__noselect" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
           <div class="leadsales__card">
             {buttons.map((btn, index, arr) => {
               let icon;
@@ -111,8 +111,8 @@ export class Leadclick {
                 <div class="leadsales__complete_row">
                   {index === 0 && <div class="leadsales__space"/>}
                   <div class="leadsales__row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this): btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
-                    <img class="leadsales__list_image" src={icon} />
-                    <p class="leadsales__integration">{btn}</p>
+                    <img class="leadsales__list_image leadsales__noselect" src={icon} />
+                    <p class="leadsales__integration leadsales__noselect">{btn}</p>
                   </div>
                   {index !== arr.length - 1 && <hr />}
                   {index === arr.length - 1 && <hr class="leadsales__hidden"/>}
@@ -123,12 +123,12 @@ export class Leadclick {
       );
     }
     return (
-      <div class="leadsales__wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : {}}>
+      <div class="leadsales__wrapper" style={this.orientation === 'right' ? {position: "fixed", bottom: "0.2rem",right: "1rem"} : this.orientation === "left" ? {position: "fixed", bottom: "0.2rem", left: "1rem"} : this.orientation === 'none' ? {display: "none"} : {}}>
         {options}
         <div class="leadsales__button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <div class="leadsales__btn_row">
-            <img class="leadsales__image" src={buttons[0] === "WhatsApp" ? this.whatsappSVG : buttons[0] === "Instagram" ? this.instagramSVG : this.facebookSVG} />
-            <p class="leadsales__cta-text">{this.cta}</p>
+            <img class="leadsales__image leadsales__noselect" src={buttons[0] === "WhatsApp" ? this.whatsappSVG : buttons[0] === "Instagram" ? this.instagramSVG : this.facebookSVG} />
+            <p class="leadsales__cta-text leadsales__noselect">{this.cta}</p>
           </div>
         </div>
         <p class="leadsales__by">
