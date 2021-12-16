@@ -127,7 +127,7 @@ export class Leadclick {
         {options}
         <div class="leadsales__button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <div class="leadsales__btn_row">
-            <img class="leadsales__image" src={this.whatsappSVG} />
+            <img class="leadsales__image" src={buttons[0] === "WhatsApp" ? this.whatsappSVG : buttons[0] === "Instagram" ? this.instagramSVG : this.facebookSVG} />
             <p class="leadsales__cta-text">{this.cta}</p>
           </div>
         </div>
