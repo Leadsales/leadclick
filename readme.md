@@ -27,6 +27,8 @@ The sidebar will change and display a textbox. Paste the code generated in leads
 
 And done, you have your widget up and running.
 
+**Note:** If you want to hide the widget for any reason, set the orientation property to `none`
+
 ## React - Usage
 
 Install the project with npm
