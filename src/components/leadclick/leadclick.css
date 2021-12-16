@@ -55,7 +55,7 @@ div {
 .leadsales__image {
   width: 1.5rem !important;
   height: 1.5rem !important;
-  margin-bottom: -0.4rem !important;
+  margin-bottom: -0.3rem !important;
 }
 
 .leadsales__card {
@@ -69,6 +69,7 @@ div {
 
 .leadsales__row_item {
   cursor: pointer !important;
+  height: auto !important;
 }
 
 .leadsales__row_item:hover {
@@ -91,7 +92,7 @@ hr {
 .leadsales__list_image {
   width: 1.5rem !important;
   height: 1.5rem !important;
-  margin-bottom: -0.3rem !important;
+  margin-bottom: -0.5rem !important;
 }
 
 .leadsales__title {
@@ -119,14 +120,6 @@ hr {
     font-family: 'Rubik', sans-serif !important;
   }
 
-  p {
-    font-family: 'Rubik', sans-serif !important;
-  }
-
-  div {
-    font-family: 'Rubik', sans-serif !important;
-  }
-
   .leadsales__button {
     width: 50px !important;
     height: 3rem !important;
@@ -137,14 +130,15 @@ hr {
     align-items: center !important;
   }
 
-  .cta-text {
+  .leadsales__cta-text {
     display: none !important;
   }
 
   .leadsales__image {
     width: 2rem !important;
     height: 2rem !important;
-    margin-bottom: -0.3rem !important;
+    margin-bottom: -1.2rem !important;
+    margin-left: -1.8rem !important;
   }
 
   .leadsales__list_image {
@@ -194,8 +188,9 @@ hr {
     width: 50px !important;
     height: 48px !important;
     cursor: pointer !important;
-    padding-top: 0.45rem !important;
-    padding-left: 0.15rem !important;
+    box-shadow: 4px 4px 4px rgba(134, 134, 134, 0.8) !important;
+    margin-bottom: 0.5rem !important;
+    margin-left: 1rem !important;
   }
 
   .leadsales__integration {
