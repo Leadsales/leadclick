@@ -28,7 +28,7 @@ div {
 
 .leadsales__cta-text {
   display: inline-block !important;
-  margin-top: 12px !important;
+  margin-top: 7px !important;
   height: auto !important;
   margin-left: 0.5rem !important;
 }
@@ -137,7 +137,7 @@ hr {
   .leadsales__image {
     width: 2rem !important;
     height: 2rem !important;
-    margin-bottom: -1.2rem !important;
+    margin-bottom: -1rem !important;
     margin-left: -1.8rem !important;
   }
 
