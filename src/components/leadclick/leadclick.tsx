@@ -46,6 +46,11 @@ export class Leadclick {
    * The position where the widget will be placed
    */
    @Prop() orientation: string;
+  /**
+   * Whether by leadsales.io will be displayed or not
+   */
+   @Prop() ispremium?: boolean;
+
 
   @State() showOptions = false;
 
@@ -91,6 +96,8 @@ export class Leadclick {
   render() {
     let options = null;
     let buttons = this.visible_integrations.split(',');
+    console.log(this.ispremium, "isPremium");
+
     if (this.showOptions) {
       options = (
           [
@@ -131,7 +138,7 @@ export class Leadclick {
             <p class="leadsales__cta-text">{this.cta}</p>
           </div>
         </div>
-        <p class="leadsales__by">
+        <p class="leadsales__by" style={this.ispremium === true ? {visibility: 'hidden'}: {}}>
           ⚡️ by{' '}
           <a rel="dofollow" target="blank" class="leadsales__leadsales_link" href="https://leadsales.io/?utm_source=leadclick">
             leadsales.io
