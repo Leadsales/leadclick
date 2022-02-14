@@ -47,7 +47,7 @@ export class Leadclick {
    */
    @Prop() orientation: string;
   /**
-   * Whether by leadsales.io will be displayed or not
+   * Whether by leadsales.io copy will be displayed or not
    */
    @Prop() ispremium?: boolean;
 
