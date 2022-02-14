@@ -36,6 +36,10 @@ export namespace Components {
          */
         "integrations": number;
         /**
+          * Whether by leadsales.io will be displayed or not
+         */
+        "ispremium"?: boolean;
+        /**
           * The position where the widget will be placed
          */
         "orientation": string;
@@ -90,6 +94,10 @@ declare namespace LocalJSX {
           * The amount of connected integrations
          */
         "integrations"?: number;
+        /**
+          * Whether by leadsales.io will be displayed or not
+         */
+        "ispremium"?: boolean;
         /**
           * The position where the widget will be placed
          */
