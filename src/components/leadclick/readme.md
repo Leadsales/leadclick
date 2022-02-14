@@ -13,7 +13,7 @@
 | `igurl`                | `igurl`                | The Instagram url                                | `string`  | `undefined` |
 | `instructions`         | `instructions`         | The title to message for the integrations        | `string`  | `undefined` |
 | `integrations`         | `integrations`         | The amount of connected integrations             | `number`  | `undefined` |
-| `isPremium`            | `is-premium`           | Whether by leadsales.io will be displayed or not | `boolean` | `undefined` |
+| `ispremium`            | `ispremium`            | Whether by leadsales.io will be displayed or not | `boolean` | `undefined` |
 | `orientation`          | `orientation`          | The position where the widget will be placed     | `string`  | `undefined` |
 | `visible_integrations` | `visible_integrations` | The name of the visible integrations             | `string`  | `undefined` |
 | `waurl`                | `waurl`                | The Whatsapp url                                 | `string`  | `undefined` |
