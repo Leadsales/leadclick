@@ -29,6 +29,24 @@ And done, you have your widget up and running.
 
 **Note:** If you want to hide the widget for any reason, set the orientation property to `none`
 
+## Shopify - Usage
+
+From your admin dashboard go to Themes.
+![ShopifyStep1](./src/assets/shopifyStep1.jpeg)
+
+Then go to your current theme and click on Actions, then on Edit code
+![ShopifyStep2](./src/assets/shopifyStep2.jpeg)
+
+On the Layout folder click on the file named **theme.liquid**
+![ShopifyStep3](./src/assets/shopifyStep3.jpeg)
+
+Scroll down to the end of the file and after the closing </ body > tag paste the generted code from Leadsales.
+![ShopifyStep4](./src/assets/shopifyStep4.jpeg)
+
+Finally click on the green save button at the top of the page. And done, you have your widget up and running.
+
+**Note:** If you want to hide the widget for any reason, set the orientation property to `none`
+
 ## React - Usage
 
 Install the project with npm
