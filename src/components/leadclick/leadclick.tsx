@@ -67,9 +67,16 @@ export class Leadclick {
   @Prop() ispremium?: boolean;
 
   /**
+  * Size of the widget
+   * @default 'm'
+  */
+  @Prop() size: 's' | 'm' | 'l' = 'm';
+
+  /**
    * A custom z-index in case you need to override the default one
+   * @default 9_999_999
    */
-  @Prop() custom_z_index?: number | string;
+  @Prop() custom_z_index?: number | string = 9_999_999;
 
   @State() showOptions = false;
 
@@ -113,7 +120,6 @@ export class Leadclick {
   render() {
     let options = null;
     const buttons = this.visible_integrations.split(',');
-    console.log(this.ispremium, 'isPremium');
 
     if (this.showOptions) {
       options = [
@@ -165,7 +171,7 @@ export class Leadclick {
     };
     const styles = {
       ...getOrientation(this.orientation),
-      'z-index': `${this.custom_z_index || 9_999_999}`,
+      'z-index': `${this.custom_z_index}`,
     } as Record<string, string>;
 
     return (
