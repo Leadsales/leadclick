@@ -1,6 +1,8 @@
 import {
   Component, Prop, h, State,
 } from '@stencil/core';
+import { JSXBase } from '@stencil/core/internal';
+import StyleHTMLAttributes = JSXBase.StyleHTMLAttributes;
 
 @Component({
   tag: 'leadclick-widget',
@@ -62,6 +64,11 @@ export class Leadclick {
    * Whether by leadsales.io copy will be displayed or not
    */
    @Prop() ispremium?: boolean;
+
+  /**
+   * A custom z-index in case you need to override the default one
+   */
+  @Prop() custom_z_index?: number | string;
 
   @State() showOptions = false;
 
@@ -138,8 +145,26 @@ export class Leadclick {
           </div>]
       );
     }
+
+    const getOrientation = (orientation: string): Record<string, any> => {
+      switch (orientation) {
+        case 'right':
+          return { position: 'fixed', bottom: '0.2rem', right: '1rem' };
+        case 'left':
+          return { position: 'fixed', bottom: '0.2rem', left: '1rem' };
+        case 'none':
+          return { display: 'none' };
+        default:
+          return {};
+      }
+    };
+    const styles = {
+      ...getOrientation(this.orientation),
+      'z-index': `${this.custom_z_index || 9_999_999}`,
+    } as Record<string, string>;
+
     return (
-      <div class="leadsales__wrapper" style={this.orientation === 'right' ? { position: 'fixed', bottom: '0.2rem', right: '1rem' } : this.orientation === 'left' ? { position: 'fixed', bottom: '0.2rem', left: '1rem' } : this.orientation === 'none' ? { display: 'none' } : {}}>
+      <div class="leadsales__wrapper" style={styles}>
         {options}
         <div class="leadsales__button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
           <div class="leadsales__btn_row">

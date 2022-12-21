@@ -16,6 +16,10 @@ export namespace Components {
          */
         "cta": string;
         /**
+          * A custom z-index in case you need to override the default one
+         */
+        "custom_z_index"?: number | string;
+        /**
           * The Whatsapp url
          */
         "fburl"?: string;
@@ -36,7 +40,7 @@ export namespace Components {
          */
         "integrations": number;
         /**
-          * Whether by leadsales.io will be displayed or not
+          * Whether by leadsales.io copy will be displayed or not
          */
         "ispremium"?: boolean;
         /**
@@ -75,6 +79,10 @@ declare namespace LocalJSX {
          */
         "cta"?: string;
         /**
+          * A custom z-index in case you need to override the default one
+         */
+        "custom_z_index"?: number | string;
+        /**
           * The Whatsapp url
          */
         "fburl"?: string;
@@ -95,7 +103,7 @@ declare namespace LocalJSX {
          */
         "integrations"?: number;
         /**
-          * Whether by leadsales.io will be displayed or not
+          * Whether by leadsales.io copy will be displayed or not
          */
         "ispremium"?: boolean;
         /**
