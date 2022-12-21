@@ -1,8 +1,9 @@
 import {
-  Component, Prop, h, State,
+  Component,
+  Prop,
+  h,
+  State,
 } from '@stencil/core';
-import { JSXBase } from '@stencil/core/internal';
-import StyleHTMLAttributes = JSXBase.StyleHTMLAttributes;
 
 @Component({
   tag: 'leadclick-widget',
@@ -38,12 +39,12 @@ export class Leadclick {
   /**
    * The background color
    */
-   @Prop() bgcolor?: string;
+  @Prop() bgcolor?: string;
 
-   /**
+  /**
    * The font color
    */
-   @Prop() fontcolor?: string;
+  @Prop() fontcolor?: string;
 
   /**
    * The amount of connected integrations
@@ -58,12 +59,12 @@ export class Leadclick {
   /**
    * The position where the widget will be placed
    */
-   @Prop() orientation: string;
+  @Prop() orientation: string;
 
-   /**
+  /**
    * Whether by leadsales.io copy will be displayed or not
    */
-   @Prop() ispremium?: boolean;
+  @Prop() ispremium?: boolean;
 
   /**
    * A custom z-index in case you need to override the default one
@@ -115,35 +116,39 @@ export class Leadclick {
     console.log(this.ispremium, 'isPremium');
 
     if (this.showOptions) {
-      options = (
-        [
-          <div class="leadsales__title leadsales__noselect" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>{this.instructions}</div>,
-          <div class="leadsales__card">
-            {buttons.map((btn, index, arr) => {
-              let icon;
-              if (btn === 'Instagram') {
-                icon = this.instagramSVG;
-              }
-              if (btn === 'WhatsApp') {
-                icon = this.whatsappSVG;
-              }
-              if (btn === 'Facebook') {
-                icon = this.facebookSVG;
-              }
-              return (
-                <div class="leadsales__complete_row">
-                  {index === 0 && <div class="leadsales__space"/>}
-                  <div class="leadsales__row_item" onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this) : btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}>
-                    <img class="leadsales__list_image leadsales__noselect" src={icon} />
-                    <p class="leadsales__integration leadsales__noselect">{btn}</p>
-                  </div>
-                  {index !== arr.length - 1 && <hr />}
-                  {index === arr.length - 1 && <hr class="leadsales__hidden"/>}
+      options = [
+        <div class="leadsales__title leadsales__noselect" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}>
+          {this.instructions}
+        </div>,
+        <div class="leadsales__card">
+          {buttons.map((btn, index, arr) => {
+            let icon;
+            if (btn === 'Instagram') {
+              icon = this.instagramSVG;
+            }
+            if (btn === 'WhatsApp') {
+              icon = this.whatsappSVG;
+            }
+            if (btn === 'Facebook') {
+              icon = this.facebookSVG;
+            }
+            return (
+              <div class="leadsales__complete_row">
+                {index === 0 && <div class="leadsales__space" />}
+                <div
+                  class="leadsales__row_item"
+                  onClick={btn === 'WhatsApp' ? this.openWhatsApp.bind(this) : btn === 'Instagram' ? this.openInstragram.bind(this) : this.openFacebook.bind(this)}
+                >
+                  <img class="leadsales__list_image leadsales__noselect" src={icon} />
+                  <p class="leadsales__integration leadsales__noselect">{btn}</p>
                 </div>
-              );
-            })}
-          </div>]
-      );
+                {index !== arr.length - 1 && <hr />}
+                {index === arr.length - 1 && <hr class="leadsales__hidden" />}
+              </div>
+            );
+          })}
+        </div>,
+      ];
     }
 
     const getOrientation = (orientation: string): Record<string, any> => {
@@ -166,9 +171,16 @@ export class Leadclick {
     return (
       <div class="leadsales__wrapper" style={styles}>
         {options}
-        <div class="leadsales__button" style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }} onClick={this.clickHandler.bind(this)}>
+        <div
+          class="leadsales__button"
+          style={{ backgroundColor: this.bgcolor ? this.bgcolor : '#3F40C2', color: this.fontcolor ? this.fontcolor : '#ffffff' }}
+          onClick={this.clickHandler.bind(this)}
+        >
           <div class="leadsales__btn_row">
-            <img class="leadsales__image leadsales__noselect" src={buttons[0] === 'WhatsApp' ? this.whatsappSVG : buttons[0] === 'Instagram' ? this.instagramSVG : this.facebookSVG} />
+            <img
+              class="leadsales__image leadsales__noselect"
+              src={buttons[0] === 'WhatsApp' ? this.whatsappSVG : buttons[0] === 'Instagram' ? this.instagramSVG : this.facebookSVG}
+            />
             <p class="leadsales__cta-text leadsales__noselect">{this.cta}</p>
           </div>
         </div>
