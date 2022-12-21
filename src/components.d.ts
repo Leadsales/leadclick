@@ -17,7 +17,6 @@ export namespace Components {
         "cta": string;
         /**
           * A custom z-index in case you need to override the default one
-          * @default 9_999_999
          */
         "custom_z_index"?: number | string;
         /**
@@ -50,7 +49,6 @@ export namespace Components {
         "orientation": string;
         /**
           * Size of the widget
-          * @default 'm'
          */
         "size": 's' | 'm' | 'l';
         /**
@@ -86,7 +84,6 @@ declare namespace LocalJSX {
         "cta"?: string;
         /**
           * A custom z-index in case you need to override the default one
-          * @default 9_999_999
          */
         "custom_z_index"?: number | string;
         /**
@@ -119,7 +116,6 @@ declare namespace LocalJSX {
         "orientation"?: string;
         /**
           * Size of the widget
-          * @default 'm'
          */
         "size"?: 's' | 'm' | 'l';
         /**

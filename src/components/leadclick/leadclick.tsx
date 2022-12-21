@@ -68,13 +68,11 @@ export class Leadclick {
 
   /**
   * Size of the widget
-   * @default 'm'
   */
   @Prop() size: 's' | 'm' | 'l' = 'm';
 
   /**
    * A custom z-index in case you need to override the default one
-   * @default 9_999_999
    */
   @Prop() custom_z_index?: number | string = 9_999_999;
 
