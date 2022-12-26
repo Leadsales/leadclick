@@ -12,6 +12,10 @@ export namespace Components {
          */
         "bgcolor"?: string;
         /**
+          * If the widget should have box shadow
+         */
+        "box_shadow"?: boolean;
+        /**
           * The call to action message
          */
         "cta": string;
@@ -78,6 +82,10 @@ declare namespace LocalJSX {
           * The background color
          */
         "bgcolor"?: string;
+        /**
+          * If the widget should have box shadow
+         */
+        "box_shadow"?: boolean;
         /**
           * The call to action message
          */
