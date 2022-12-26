@@ -12,6 +12,10 @@ export namespace Components {
          */
         "bgcolor"?: string;
         /**
+          * If the widget should have box shadow
+         */
+        "box_shadow"?: boolean;
+        /**
           * The call to action message
          */
         "cta": string;
@@ -48,6 +52,10 @@ export namespace Components {
          */
         "orientation": string;
         /**
+          * Size of the widget
+         */
+        "size": 's' | 'm' | 'l';
+        /**
           * The name of the visible integrations
          */
         "visible_integrations": string;
@@ -74,6 +82,10 @@ declare namespace LocalJSX {
           * The background color
          */
         "bgcolor"?: string;
+        /**
+          * If the widget should have box shadow
+         */
+        "box_shadow"?: boolean;
         /**
           * The call to action message
          */
@@ -110,6 +122,10 @@ declare namespace LocalJSX {
           * The position where the widget will be placed
          */
         "orientation"?: string;
+        /**
+          * Size of the widget
+         */
+        "size"?: 's' | 'm' | 'l';
         /**
           * The name of the visible integrations
          */
